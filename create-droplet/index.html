@@ -1,0 +1,700 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Create Droplets</title>
+
+    <link href="../stylesheets/style-958f292e.css" rel="stylesheet" type="text/css" />
+    <script src="../javascripts/all-4acd1eaa.js" type="text/javascript"></script>
+
+    <script src="//use.typekit.net/njm7orv.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body class="create-droplet create-droplet_index">
+    <nav class="HeaderNav">
+  <div class="nav_controls">
+    <div class="row">
+      <div class="columns small-9">
+        <div class="logo-wrapper">
+          <a class="Logo" href="/cloud/"></a>
+          <!-- <a href="/" class="Logo"></a> -->
+        </div>
+        <ul class="topNav">
+          <li><a class="" href="/cloud/">Droplets</a></li>
+          <li><a class="" href="/cloud/image/">Images</a></li>
+          <li><a class="" href="/cloud/networking/">Networking</a></li>
+          <li><a class="" href="/cloud/api/">API</a></li>
+          <li><a href="https://cloud.digitalocean.com/support/">Support</a></li>
+        </ul>
+      </div>
+      <div class="columns small-3 stackRight">
+        <div class="account-dropdown">
+          <img class="avatar" src="https://secure.gravatar.com/avatar/8ae2f2acc080550711c6c71a13dd8fc8?default=identicon&amp;secure=true">
+          <span class="Icon--arrowDown"></span>
+        </div>
+          <a class="create_droplet Button Button--green u-mr-3" href="/cloud/create-droplet/">Create Droplet</a>
+
+        <!-- <a href="/create-droplet/" class="create_droplet Button Button--green u-mr-3">Create Droplet</a> -->
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="wrapper">
+      <div class="content u-pt-3">
+        <style>
+.resource-icon.default-notification, .resource-icon.floating-ip, .resource-icon.news-notification, .resource-icon.snapshot-backup, .resource-icon.storage {
+    background-image: url(https://cloud-cdn-digitalocean-com.global.ssl.fastly.net/aurora/assets/images/sprites-85d79111a8839ca85f073ba5e71fbe98.png);
+    background-size: 67.5px 3184px;
+    width: 32px;
+    height: 32px;
+}
+.resource-icon.snapshot-backup {
+    background-position: 0 -2933px;
+}
+th:after {
+  display: none;
+}
+
+.block {
+    border-radius: 3px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: #bbb;
+    border: 1px solid #dfdfdf;
+    box-sizing: border-box;
+    min-height: 100px;
+}
+.block.selected {
+    border-color: #0069ff;
+}
+.block .button {
+    width: 100%;
+    outline: 0;
+    background-color: #FFF;
+    padding: 0;
+    line-height: inherit;
+    text-transform: inherit;
+    border: none;
+    color: inherit;
+    min-height: 70px;
+}
+.block.selected .button {
+    background-color: #0069ff;
+    color: #fff;
+}
+.block .button .icon {
+    height: 54px;
+    width: 54px;
+    margin: 10px auto 0;
+}
+.block .button.ubuntu .icon,
+.block.selected .button.ubuntu .icon {
+    border-color: #dfdfdf;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://cloud-cdn-digitalocean-com.global.ssl.fastly.net/aurora/assets/images/sprites-aed453f230c9d4fbffdf4f76010f27fc.png');
+    background-size: 67.5px 3184px;
+    border: 0;
+    background-position: 0 -2553px;
+    -webkit-transform: scale(.8,.8);
+    transform: scale(.8,.8);
+}
+.block.selected .button.ubuntu .icon {
+    background-position: 0 -2655px;
+}
+.block .version {
+    text-align: center;
+    border-top: 1px solid #dfdfdf;
+    display: block;
+    cursor: pointer;
+    font-size: 13px;
+    outline: 0;
+}
+.block .version .block-dropdown-trigger {
+    background: #FFF;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.block .block-dropdown-trigger {
+    padding: 10px;
+}
+.block.selected .version {
+    border-top: 1px solid #0069ff;
+    color: #0069ff;
+}
+.block .version .version-name {
+    font-weight: 600;
+    margin-right: 8px;
+    width: calc(100% - 30px);
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+.distro {
+  font-size: 16px;
+  display: block;
+  margin: 4px 0 10px;
+}
+.button.pricing {
+    border-bottom: 1px solid #dfdfdf;
+    padding: 18px 0 11px 0;
+}
+.block.selected .button.pricing {
+    background: #0069ff;
+    border-bottom: 1px solid #0069ff;
+    color: #fff;
+}
+.button.pricing span.pricing-monthly,
+.button.pricing span.pricing-hourly {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+.button.pricing span.pricing-monthly span.cost {
+  font-size: 26px;
+  font-weight: 600;
+}
+.button.pricing span.pricing-monthly span.dollar {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 15px;
+  vertical-align: top;
+  position: relative;
+  left: 2px;
+  top: 9px;
+}
+.button.pricing span.pricing-monthly span.time {
+  font-size: 16px;
+  right: 3px;
+  position: relative;
+}
+div.details {
+  padding: 15px 0;
+  font-size: 14px;
+  color: #7B7B7B;
+}
+.stepper {
+  position: relative;
+  border: 2px solid #f1f1f1;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  display: inline-block;
+}
+.stepper.Icon--plus {
+  border-left: 0;
+}
+input.stepper {
+  border-radius: 0;
+  border: 2px solid #f1f1f1;
+  width: 100%;
+  height: 48px;
+  text-align: center;
+}
+.Button.Button--icon {
+  width: 22px;
+  height: 22px;
+  line-height: 0.9em;
+  top: -1px;
+  position: relative;
+}
+</style>
+
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Create Droplets</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Choose an image <a class="Button Button--icon">?</a></h2>
+  </div>
+  <div class="small-12 columns">
+    <a class="u-mt-3 u-floatRight" href="#"><span class="Icon--gear"></span></a>
+    <ul class="Tabs" role="tablist">
+      <li role="presentation" class="is-active">
+        <a href="#distributions" aria-controls="distributions" role="tab" data-toggle="tab">Distributions</a>
+      </li>
+      <li role="presentation">
+        <a href="#apps" aria-controls="apps" role="tab" data-toggle="tab">One-click Apps</a>
+      </li>
+      <li role="presentation">
+        <a href="#snapshots" aria-controls="snapshots" role="tab" data-toggle="tab">Snapshots</a>
+      </li>
+      <li role="presentation">
+        <a href="#backups" aria-controls="backups" role="tab" data-toggle="tab">Backups</a>
+      </li>
+    </ul>
+    <div class="Tabs-content Tabs-content--box u-pl-0 u-pr-0">
+      <div role="tabpanel" class="Tabs-pane is-active" id="distributions">
+        <div class="row">
+          <ul class="small-block-grid-6">
+            <li>
+              <div class="block selected">
+                <button class="button ubuntu">
+                  <div class="icon"></div>
+                  <span class="distro">Ubuntu</span>
+                </button>
+                <div class="version Dropdown">
+                  <div class="block-dropdown-trigger">
+                    <span class="version-name">16.04.1 x64</span>
+                    <span class="block-select">
+                      <span class="Icon--arrowDown"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="block">
+                <button class="button ubuntu">
+                  <div class="icon"></div>
+                  <span class="distro">Ubuntu</span>
+                </button>
+                <div class="version Dropdown">
+                  <div class="block-dropdown-trigger">
+                    <span class="version-name">Select Version</span>
+                    <span class="block-select">
+                      <span class="Icon--arrowDown"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="block">
+                <button class="button ubuntu">
+                  <div class="icon"></div>
+                  <span class="distro">Ubuntu</span>
+                </button>
+                <div class="version Dropdown">
+                  <div class="block-dropdown-trigger">
+                    <span class="version-name">Select Version</span>
+                    <span class="block-select">
+                      <span class="Icon--arrowDown"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="block">
+                <button class="button ubuntu">
+                  <div class="icon"></div>
+                  <span class="distro">Ubuntu</span>
+                </button>
+                <div class="version Dropdown">
+                  <div class="block-dropdown-trigger">
+                    <span class="version-name">Select Version</span>
+                    <span class="block-select">
+                      <span class="Icon--arrowDown"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="block">
+                <button class="button ubuntu">
+                  <div class="icon"></div>
+                  <span class="distro">Ubuntu</span>
+                </button>
+                <div class="version Dropdown">
+                  <div class="block-dropdown-trigger">
+                    <span class="version-name">Select Version</span>
+                    <span class="block-select">
+                      <span class="Icon--arrowDown"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="block">
+                <button class="button ubuntu">
+                  <div class="icon"></div>
+                  <span class="distro">Ubuntu</span>
+                </button>
+                <div class="version Dropdown">
+                  <div class="block-dropdown-trigger">
+                    <span class="version-name">Select Version</span>
+                    <span class="block-select">
+                      <span class="Icon--arrowDown"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div role="tabpanel" class="Tabs-pane" id="apps">
+        <div class="row">
+          <div class="small-12 columns">
+            <!-- one click apps -->
+          </div>
+        </div>
+      </div>
+      <div role="tabpanel" class="Tabs-pane" id="snapshots">
+        <div class="row">
+          <div class="small-12 columns">
+            <!-- snapshots -->
+          </div>
+        </div>
+      </div>
+      <div role="tabpanel" class="Tabs-pane" id="backups">
+        <div class="row">
+          <div class="small-12 columns">
+            <!-- backups -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row u-mt-6">
+  <div class="small-12 columns">
+    <h2>Choose a size</h2>
+  </div>
+  <div class="small-12 columns">
+    <ul class="small-block-grid-6">
+      <li>
+        <div class="block selected">
+          <button class="button pricing">
+            <span class="pricing-monthly">
+              <span class="dollar">$</span>
+              <span class="cost">5</span>
+              <span class="time">/mo</span>
+            </span>
+            <span class="pricing-hourly">
+              <span class="dollar">$</span>
+              <span class="cost">0.007</span>
+              <span class="time">/hour</span>
+            </span>
+          </button>
+          <div class="details">
+            <ul>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>20 GB</strong> / SSD Disk</li>
+              <li><strong>1000 GB</strong> / Transfer</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <button class="button pricing">
+            <span class="pricing-monthly">
+              <span class="dollar">$</span>
+              <span class="cost">5</span>
+              <span class="time">/mo</span>
+            </span>
+            <span class="pricing-hourly">
+              <span class="dollar">$</span>
+              <span class="cost">0.007</span>
+              <span class="time">/hour</span>
+            </span>
+          </button>
+          <div class="details">
+            <ul>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <button class="button pricing">
+            <span class="pricing-monthly">
+              <span class="dollar">$</span>
+              <span class="cost">5</span>
+              <span class="time">/mo</span>
+            </span>
+            <span class="pricing-hourly">
+              <span class="dollar">$</span>
+              <span class="cost">0.007</span>
+              <span class="time">/hour</span>
+            </span>
+          </button>
+          <div class="details">
+            <ul>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <button class="button pricing">
+            <span class="pricing-monthly">
+              <span class="dollar">$</span>
+              <span class="cost">5</span>
+              <span class="time">/mo</span>
+            </span>
+            <span class="pricing-hourly">
+              <span class="dollar">$</span>
+              <span class="cost">0.007</span>
+              <span class="time">/hour</span>
+            </span>
+          </button>
+          <div class="details">
+            <ul>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <button class="button pricing">
+            <span class="pricing-monthly">
+              <span class="dollar">$</span>
+              <span class="cost">5</span>
+              <span class="time">/mo</span>
+            </span>
+            <span class="pricing-hourly">
+              <span class="dollar">$</span>
+              <span class="cost">0.007</span>
+              <span class="time">/hour</span>
+            </span>
+          </button>
+          <div class="details">
+            <ul>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <button class="button pricing">
+            <span class="pricing-monthly">
+              <span class="dollar">$</span>
+              <span class="cost">5</span>
+              <span class="time">/mo</span>
+            </span>
+            <span class="pricing-hourly">
+              <span class="dollar">$</span>
+              <span class="cost">0.007</span>
+              <span class="time">/hour</span>
+            </span>
+          </button>
+          <div class="details">
+            <ul>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <button class="button pricing">
+            <span class="pricing-monthly">
+              <span class="dollar">$</span>
+              <span class="cost">5</span>
+              <span class="time">/mo</span>
+            </span>
+            <span class="pricing-hourly">
+              <span class="dollar">$</span>
+              <span class="cost">0.007</span>
+              <span class="time">/hour</span>
+            </span>
+          </button>
+          <div class="details">
+            <ul>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <button class="button pricing">
+            <span class="pricing-monthly">
+              <span class="dollar">$</span>
+              <span class="cost">5</span>
+              <span class="time">/mo</span>
+            </span>
+            <span class="pricing-hourly">
+              <span class="dollar">$</span>
+              <span class="cost">0.007</span>
+              <span class="time">/hour</span>
+            </span>
+          </button>
+          <div class="details">
+            <ul>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <button class="button pricing">
+            <span class="pricing-monthly">
+              <span class="dollar">$</span>
+              <span class="cost">5</span>
+              <span class="time">/mo</span>
+            </span>
+            <span class="pricing-hourly">
+              <span class="dollar">$</span>
+              <span class="cost">0.007</span>
+              <span class="time">/hour</span>
+            </span>
+          </button>
+          <div class="details">
+            <ul>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+              <li><strong>512 MB</strong> / 1 CPU</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row u-mt-6 u-mb-9">
+  <div class="small-12 columns">
+    <h2 class="u-floatLeft">Add block storage <span class="Badge u-mr-3">New!</span></h2>
+    <p class="u-clearfix u-mt-2">Currently only available in FRA1, NYC1 and SFO2.</p>
+    <a class="Button u-clearfix">Add a volume</a>
+  </div>
+</div>
+
+<div class="row u-mt-6">
+  <div class="small-12 columns">
+    <h2>Choose a datacenter region</h2>
+  </div>
+  <div class="small-12 columns">
+    <ul class="small-block-grid-6">
+      <li>
+        <div class="block selected">
+          <button class="button pricing">
+            <span class="location">
+              New York
+            </span>
+          </button>
+          <div class="number">
+            <ul>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row u-mt-6 u-mb-9">
+  <div class="small-12 columns">
+    <h2>Select additional options <a class="Button Button--icon">?</a></h2>
+    <div class="checkbox">
+      <input type="checkbox" name="checkbox" value="" id="checkbox"/>
+      <span></span>
+      <label for="checkbox">Private Networking</label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" name="checkboxB" value="" id="checkboxB"/>
+      <span></span>
+      <label for="checkboxB">Backups</label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" name="checkboxC" value="" id="checkboxC"/>
+      <span></span>
+      <label for="checkboxC">IPv6</label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" name="checkboxC" value="" id="checkboxC"/>
+      <span></span>
+      <label for="checkboxC">User Data</label>
+    </div>
+  </div>
+</div>
+
+<div class="row u-mt-6 u-mb-9">
+  <div class="small-12 columns">
+    <h2>Add your SSH keys <a class="Button Button--icon">?</a></h2>
+    <a class="Button Button--blue">New SSH Key</a>
+  </div>
+</div>
+
+<div class="row u-mt-6">
+  <div class="small-12 columns">
+    <h2>Finalize and create</h2>
+  </div>
+  <div class="small-4 columns">
+    <section class="Box">
+      <h3>How many Droplets?</h3>
+      <p class="u-mb-4">Deploy multiple Droplets with the same <a href="#">configuration</a>.</p>
+      <form data-validate="true">
+        <fieldset class="u-mb-0">
+          <div class="row">
+            <div class="small-2 columns u-pa-0">
+              <span class="stepper Icon--minus disabled"></span>
+            </div>
+            <div class="small-8 columns u-pa-0">
+              <input class="stepper u-mb-0" type="text" placeholder="1 Dropet">
+            </div>
+            <div class="small-2 columns u-pa-0">
+              <span class="stepper Icon--plus increase"></span>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </div>
+  <div class="small-8 columns">
+    <section class="Box">
+      <h3>Choose a hostname</h3>
+      <p class="u-mb-4">Give your Droplets an identifying name you will remember them by. Your Droplet name can only contain alphanumeric characters, dashes, and periods.</p>
+      <form data-validate="true">
+        <fieldset class="u-mb-0">
+          <input class="u-mb-0" type="text" placeholder="ubuntu-512mb-sfo2-01">
+        </fieldset>
+      </form>
+    </section>
+  </div>
+</div>
+
+<div class="row u-mt-6 u-mb-9">
+  <div class="small-12 columns">
+    <a class="Button Button--green Button--fullWidth">Create</a>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

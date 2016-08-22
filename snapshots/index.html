@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Snapshots</title>
+
+    <link href="../stylesheets/style-958f292e.css" rel="stylesheet" type="text/css" />
+    <script src="../javascripts/all-4acd1eaa.js" type="text/javascript"></script>
+
+    <script src="//use.typekit.net/njm7orv.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body class="snapshots snapshots_index">
+    <nav class="HeaderNav">
+  <div class="nav_controls">
+    <div class="row">
+      <div class="columns small-9">
+        <div class="logo-wrapper">
+          <a class="Logo" href="/cloud/"></a>
+          <!-- <a href="/" class="Logo"></a> -->
+        </div>
+        <ul class="topNav">
+          <li><a class="" href="/cloud/">Droplets</a></li>
+          <li><a class="" href="/cloud/image/">Images</a></li>
+          <li><a class="" href="/cloud/networking/">Networking</a></li>
+          <li><a class="" href="/cloud/api/">API</a></li>
+          <li><a href="https://cloud.digitalocean.com/support/">Support</a></li>
+        </ul>
+      </div>
+      <div class="columns small-3 stackRight">
+        <div class="account-dropdown">
+          <img class="avatar" src="https://secure.gravatar.com/avatar/8ae2f2acc080550711c6c71a13dd8fc8?default=identicon&amp;secure=true">
+          <span class="Icon--arrowDown"></span>
+        </div>
+          <a class="create_droplet Button Button--green u-mr-3" href="/cloud/create-droplet/">Create Droplet</a>
+
+        <!-- <a href="/create-droplet/" class="create_droplet Button Button--green u-mr-3">Create Droplet</a> -->
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="wrapper">
+      <div class="content u-pt-3">
+        <div class="row">
+  <div class="droplet-header small-10 columns u-mb-2">
+    <div class="Resource Resource--rightContext" data-value="ubuntu-512mb-sfo2-01" data-type="droplet" data-id="20745849" title="">
+      <div class="Resource-image large">
+        <div class="resource-icon droplet large"></div>
+        <div class="statusIndicator active"></div>
+      </div>
+      <div class="Resource-meta no-region">
+        <div class="Resource-title">ubuntu-512mb-sfo2-01</div>
+        <div class="Resource-description">
+          512 MB Memory / 20 GB Disk  + 100 GB / SFO2
+          <span class="image-name"> - Ubuntu 16.04.1 x64</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="small-2 columns Toggle is-on">
+    <div class="Toggle-switcher"></div>
+  </div>
+</div>
+
+<div class="row u-dividerBottomLarge u-dividerTopLarge u-pa-0 u-mb-5">
+  <div class="small-12 columns">
+    <table>
+      <thread>
+        <tr>
+          <th>IPv4: 123.221.123.456</th>
+          <th>IPv6: <a href="#">Enable Now</a></th>
+          <th>Private IP: <a href="#">Enable Now</a></th>
+          <th>Floating IP: 133.663.345.133</th>
+          <th><a href="#">Console <span class="Icon--newWindow"></span></a></li>
+        </tr>
+      </thread>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-2 columns">
+    <nav class="SideNav">
+      <ul>
+        <li><a href="#">Graphs</a></li>
+        <li><a href="#">Access</a></li>
+        <li><a href="#">Power</a></li>
+        <li><a href="#" class="beta-new">Volumes</a></li>
+        <li><a href="#">Networking</a></li>
+        <li class="is-active"><a href="#">Snapshots</a></li>
+        <li><a href="#">Kernal</a></li>
+        <li><a href="#">History</a></li>
+        <li><a href="#">Destroy</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="small-10 columns">
+    <div class="Box">
+      <div class="row">
+        <div class="small-12 columns">
+          <h2>Snapshot</h2>
+          <p>A snapshot is an image of your Droplet. Power-down Droplets before taking a snapshot to ensure data consistency. Snapshot costs are based off space used and charged at $0.10/GB/mo.</p>
+        </div>
+      </div>
+      <div class="row u-mt-4">
+        <form data-validate="true">
+          <fieldset class="u-mb-0">
+            <div class="small-9 columns">
+              <input class="u-mb-0" type="text" placeholder="Enter a name for your snapshot">
+            </div>
+            <div class="small-3 columns">
+              <input type="submit" value="Take snapshot" class="Button Button--blue Button--fullWidth" disabled>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="row u-mt-6">
+        <div class="small-12 columns">
+          <h2>Automated snapshot</h2>
+          <p>Protect your data by automating snapshots. Create a recurring cycle and choose how many snapshots you would like to retain for your Droplets.</p>
+        </div>
+      </div>
+      <div class="row u-mt-4">
+        <form>
+          <fieldset class="u-mb-0">
+            <div class="small-8 columns">
+              <div class="small-3 columns u-pl-0 u-mt-3">
+                <p>Take snapshots</p>
+              </div>
+              <div class="small-3 columns">
+                <select class="select chosen">
+                  <option value="Daily">Daily</option>
+                  <option value="Weekly">Weekly</option>
+                </select>
+              </div>
+              <div class="small-3 columns u-pr-0 u-mt-3">
+                <p>&amp; retain the last</p>
+              </div>
+              <div class="small-3 columns">
+                <select class="select chosen">
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+            <div class="small-4 columns">
+              <div class="row">
+                <div class="small-6 columns">
+                  <input type="submit" value="Save" class="Button Button--fullWidth Button--blue">
+                </div>
+                <div class="small-6 columns">
+                  <input type="submit" value="Cancel" class="Button--fullWidth Button">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="row u-mt-5">
+        <div class="small-12 columns">
+          <table class="table--sort" data-searching="false" data-ordering="true">
+            <thead>
+              <tr role="row">
+                <th>Name</th>
+                <th>Size</th>
+                <th>Created</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="sorting_1">
+                  <div class="Resource">
+                    <div class="Resource-image">
+                      <div class="resource-icon snapshot-backup"></div>
+                    </div>
+                    <div class="ResourceObject-meta u-ml-7">
+                      <div class="Resource-title"><a href="#">Droplet-name</a></div>
+                      <div class="Resource-description">NYC3 / 512MB / 20GB</div>
+                    </div>
+                  </div>
+                </td>
+                <td>5GB</td>
+                <td>1 month ago</td>
+                <td><a href="#">More <span class="Icon--arrowDown"></span></a></td>
+              </tr>
+              <tr>
+                <td class="sorting_1">
+                  <div class="Resource">
+                    <div class="Resource-image">
+                      <div class="resource-icon snapshot-backup"></div>
+                    </div>
+                    <div class="ResourceObject-meta u-ml-7">
+                      <div class="Resource-title"><a href="#">Droplet-name-2</a></div>
+                      <div class="Resource-description">NYC3 / 512MB / 20GB</div>
+                    </div>
+                  </div>
+                </td>
+                <td>1.82GB</td>
+                <td>2 month ago</td>
+                <td><a href="#">More <span class="Icon--arrowDown"></span></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>
